@@ -1,20 +1,60 @@
 # Question 1:
-How does a program read the cvMat object, in particular, what is the
-order of the pixel structure?
+ColorImage.cpp is a program that takes a look at colorspace conversions in
+OpenCV. Run the code in ColorImage.cpp and comment on the outputs.
+Implement the same thing in Python and save each image.
 
-# Answer:
-Matrix elements are stored row by row. Element (i, j) (i - 0-based row index, j - 0-based column index) of a matrix can be retrieved or modified using CV_MAT_ELEM macro:
+## Answer:
+The outputs are 10 images:
+
+The first image is the orginial image.
+
+The 2nd to the 4th images show the intensity of the colors, red, green and blue, in the orginal image.
+
+The 5th image shows the luma  component of the image.
+
+The 6th and 7th images show The blue-difference and red-difference chroma components of the image.
+
+The 8th image shows the degree to which a stimulus can be described as similar to or different from stimuli
+
+The 9th image shows the saturation of a color which is determined by a combination of light intensity and how much it is distributed across the spectrum of different wavelengths. 
+
+The 10th images shows the brightness of the image.
+
+# Question 2:
+Print out the values of the pixel at (20,25) in the RGB, YCbCr and HSV
+versions of the image. What are the ranges of pixel values in each channel
+of each of the above mentioned colorspaces?
+
+## Answer:
+### The value of pixel at (20,25) of Lenna image
 
 ```
-uchar pixval = CV_MAT_ELEM(grayimg, uchar, i, j)
-CV_MAT_ELEM(cameraMatrix, float, 0, 2) = image.width*0.5f;
+('RGB [20,25] : ', array([106, 122, 225], dtype=uint8))
+('YCbCr [20,25] : ', array([151, 181, 103], dtype=uint8))
+('HSV [20,25] : ', array([  4, 135, 225], dtype=uint8))
 ```
-To access multiple-channel matrices, you can use CV_MAT_ELEM(matrix, type, i, j*nchannels + channel_idx).
 
-The order of the pixel structure is:
+### The ranges of pixel values:
+```
+RGB: 
+R : 0 ~ 255
+G : 0 ~ 255
+B : 0 ~ 255
+```
+```
+YCbCr with Sub sampling ratio 4:2:0
+Luma Y : 16 ~ 235
+Chorma Cb : 16 ~ 240
+Chorma Cr : 16 ~ 240
 
-For gray scale image:
-![alt text](https://docs.opencv.org/2.4/_images/math/146857cf7bb2f26ce5ef0b4ddff686cf6f945204.png)
-
-For RGB image:
-![alt text](https://docs.opencv.org/2.4/_images/math/b6df115410caafea291ceb011f19cc4a19ae6c2c.png)
+YCbCr with Sub sampling ratio 4:4:4
+Luma Y : 0 ~ 255
+Chorma Cb : 0 ~ 255
+Chorma Cr : 0 ~ 255
+```
+```
+HSV:
+H : 0 ~ 180
+S : 0 ~ 255
+V : 0 ~ 255
+```
