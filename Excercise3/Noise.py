@@ -34,45 +34,45 @@ def main():
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/Orignial.png",img)
 	
 # Gaussain noise
-	mean = 10
-	sigma = 50
+	mean = 0
+	sigma = 20
 	gaussian_noise = Add_GNoise(img,mean,sigma)
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/Gaussian_noise.png", gaussian_noise)
 
 	# Box filter
 	noise_dst = gaussian_noise.copy()
-	gn_Blur = cv2.blur(noise_dst,(3,3))
+	gn_Blur = cv2.blur(noise_dst,(7,7))
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/GN_BoxFilter.png", gn_Blur)
 
 	# Gaussain filter
 	noise_dst1 = gaussian_noise.copy()
-	gn_GaussianBlur = cv2.GaussianBlur(noise_dst1,(3,3),1.5)
+	gn_GaussianBlur = cv2.GaussianBlur(noise_dst1,(7,7),1.5)
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/GN_GaussianFilter.png", gn_GaussianBlur)
 
 	# Median filter
 	noise_dst2 = gaussian_noise.copy()
-	gn_MedianFilter = cv2.medianBlur(noise_dst2,3)
+	gn_MedianFilter = cv2.medianBlur(noise_dst2,7)
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/GN_MedianFilter.png", gn_MedianFilter)
 
 # Sault and Pepper noise
-	pa = 0.03
-	pb = 0.05
+	pa = 0.01
+	pb = 0.01
 	sp_noise = Add_salt_pepper_Noise(img,pa,pb)
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/Slat_and_Pepper_Noise.png", sp_noise)
 
 	# Box filter
 	noise_dst = sp_noise.copy()
-	sp_Blur = cv2.blur(noise_dst,(3,3))
+	sp_Blur = cv2.blur(noise_dst,(7,7))
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/SP_BoxFilter.png", sp_Blur)
 
 	# Gaussain filter
 	noise_dst1 = sp_noise.copy()
-	sp_GaussianBlur = cv2.GaussianBlur(noise_dst1,(3,3),1.5)
+	sp_GaussianBlur = cv2.GaussianBlur(noise_dst1,(7,7),1.5)
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/SP_GaussianFilter.png", sp_GaussianBlur)
 
 	# Median filter
 	noise_dst2 = sp_noise.copy()
-	sp_MedianFilter = cv2.medianBlur(noise_dst2,3)
+	sp_MedianFilter = cv2.medianBlur(noise_dst2,7)
 	cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise3/output/SP_MedianFilter.png", sp_MedianFilter)
 
 
