@@ -24,5 +24,3 @@ cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise2/ou
 cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise2/output/Saturation.png",s)
 cv2.imwrite("/Users/bubble/Documents/GitHub/EC601_OpenCV_excercise/Excercise2/output/Value.png",v)
 
-#cv2.waitKey(0)
-#cv2.distroyAllWindows()
