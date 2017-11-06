@@ -7,7 +7,8 @@ pa = 0.01, 0.03, 0.05, 0.4 and pb = 0.01, 0.03, 0.05, 0.4.
 ## Answer:
 As the values increasing, there are more noise created.
 
-# Question 2: Change the kernel sizes for all the filters with all different values for noises
+# Question 2: 
+Change the kernel sizes for all the filters with all different values for noises
 and print the results for 3x3, 5x5 and 7x7 kernels. Comment on the results.
 Which filter seems to work "better" for images with salt-and-pepper noise
 and gaussian noise?
