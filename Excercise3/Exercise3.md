@@ -20,7 +20,7 @@ I use the Gaussian Noise with mean = 0, sigma = 20 and Salt-and-pepper Noise wit
 For Gaussian Noise, Gaussian Filter works better
 
 ![alt tag](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%20mean%3D0%20sigma%3D20%20pa%3D0.01%20pb%20%3D%200.01/GN_GaussianFilter.png)
-![alt tag](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/Excercise3/output 5x5/GN_GaussianFilter.png)
+![alt tag](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%205x5/GN_GaussianFilter.png)
 ![alt tag](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%207x7/GN_GaussianFilter.png)
 
 ## Salt-and-Pepper Noise
