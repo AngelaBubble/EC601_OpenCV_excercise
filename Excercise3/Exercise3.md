@@ -16,13 +16,14 @@ and gaussian noise?
 As the kernels sizes increase, the resulting image gets more blur.
 I use the Gaussian Noise with mean = 0, sigma = 20 and Salt-and-pepper Noise with pa = 0.01, pb = 0.01 in the kernel changing cases.
 
+## Gaussian Noise
 For Gaussian Noise, Gaussian Filter works better
-```
+
 ![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%20mean%3D0%20sigma%3D20%20pa%3D0.01%20pb%20%3D%200.01/GN_GaussianFilter.png)
 ![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/Excercise3/output 5x5/GN_GaussianFilter.png)
 ![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%207x7/GN_GaussianFilter.png)
-```
 
+## Salt-and-Pepper Noise
 For Salt-and-Pepper Noise, Median filter works better
 ```
 ![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%20mean%3D0%20sigma%3D20%20pa%3D0.01%20pb%20%3D%200.01/SP_MedianFilter.png)
