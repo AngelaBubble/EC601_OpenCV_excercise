@@ -1,20 +1,31 @@
 # Question 1:
-How does a program read the cvMat object, in particular, what is the
-order of the pixel structure?
+Look at the code in Noise.cpp and implement the code in Python. Also,
+print the results for different noise values in the Gaussian case, mean =
+0, 5, 10, 20 and sigma = 0, 20, 50, 100 and for the salt-and-pepper case,
+pa = 0.01, 0.03, 0.05, 0.4 and pb = 0.01, 0.03, 0.05, 0.4.
+
+## Answer:
+As the values increasing, there are more noise created.
+
+# Question 2: Change the kernel sizes for all the filters with all different values for noises
+and print the results for 3x3, 5x5 and 7x7 kernels. Comment on the results.
+Which filter seems to work "better" for images with salt-and-pepper noise
+and gaussian noise?
 
 # Answer:
-Matrix elements are stored row by row. Element (i, j) (i - 0-based row index, j - 0-based column index) of a matrix can be retrieved or modified using CV_MAT_ELEM macro:
+As the kernels sizes increase, the resulting image gets more blur.
+I use the Gaussian Noise with mean = 0, sigma = 20 and Salt-and-pepper Noise with pa = 0.01, pb = 0.01 in the kernel changing cases.
 
+For Gaussian Noise, Gaussian Filter works better
 ```
-uchar pixval = CV_MAT_ELEM(grayimg, uchar, i, j)
-CV_MAT_ELEM(cameraMatrix, float, 0, 2) = image.width*0.5f;
+![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%20mean%3D0%20sigma%3D20%20pa%3D0.01%20pb%20%3D%200.01/GN_GaussianFilter.png)
+![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/Excercise3/output 5x5/GN_GaussianFilter.png)
+![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%207x7/GN_GaussianFilter.png)
 ```
-To access multiple-channel matrices, you can use CV_MAT_ELEM(matrix, type, i, j*nchannels + channel_idx).
 
-The order of the pixel structure is:
-
-For gray scale image:
-![alt text](https://docs.opencv.org/2.4/_images/math/146857cf7bb2f26ce5ef0b4ddff686cf6f945204.png)
-
-For RGB image:
-![alt text](https://docs.opencv.org/2.4/_images/math/b6df115410caafea291ceb011f19cc4a19ae6c2c.png)
+For Salt-and-Pepper Noise, Median filter works better
+```
+![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%20mean%3D0%20sigma%3D20%20pa%3D0.01%20pb%20%3D%200.01/SP_MedianFilter.png)
+![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%205x5/SP_MedianFilter.png)
+![alt text](https://raw.githubusercontent.com/WeiXinqiao/EC601_OpenCV_excercise/master/Excercise3/output%207x7/SP_MedianFilter.png)
+```
